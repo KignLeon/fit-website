@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>About Us - FTI</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/style.css">
+     <script>
+         tailwind.config = {
+             theme: {
+                 extend: {
+                    borderRadius: {
+                        '4xl': '2rem',
+                    },
+                     fontFamily: { sans: ['Inter', 'sans-serif'], },
+                     colors: { 'primary': '#0052d4', 'slate-800': '#1e293b', 'slate-600': '#475569', 'slate-100': '#f1f5f9', }
+                 }
+             }
+         }
+     </script>
+ </head>
+ <body class="bg-slate-100 font-sans antialiased pt-24">
+    
+    <!-- SVG Filter for Liquid Glass Effect -->
+    <svg style="display:none;">
+        <filter id="displacementFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="1" result="warp" />
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="20" in="SourceGraphic" in2="warp" />
+        </filter>
+    </svg>
+
+     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 p-4">
+        <div class="container mx-auto flex justify-between items-center p-3 rounded-3xl liquid-glass">
+            <a href="index.html" class="text-3xl font-bold text-primary pl-4">FTI</a>
+            <nav class="hidden md:flex items-center space-x-2">
+                <a href="index.html" class="nav-link text-slate-600 font-medium">Home</a>
+                <a href="enroll.html" class="nav-link text-slate-600 font-medium">Book a Session</a>
+                <a href="about.html" class="nav-link text-slate-600 font-medium">About Us</a>
+            </nav>
+            <a href="enroll.html" class="hidden md:inline-block bg-primary text-white font-semibold py-3 px-6 rounded-full hover:opacity-90 transition duration-300 button-glow mr-2">Get Started</a>
+        </div>
+     </header>
+
+     <div class="container mx-auto p-6">
+         <section class="py-16 md:py-24">
+             <div class="grid md:grid-cols-2 gap-16 items-center">
+                 <div>
+                     <h1 class="text-5xl font-bold text-slate-800 leading-tight">We Believe Technology Should Empower, Not Intimidate</h1>
+                     <p class="mt-6 text-lg text-slate-600">
+                         FTI was founded on a simple, powerful idea: everyone, regardless of age, deserves the confidence to navigate the digital world. We saw too many people feeling frustrated or left behind by technology that was supposed to make life easier.
+                     </p>
+                     <p class="mt-4 text-lg text-slate-600">
+                         Our mission is to replace that frustration with empowerment. We provide patient, clear, and personalized guidance that focuses on *your* goals. We're not just teaching you to tap and click; we're helping you connect with family, pursue your passions, and manage your life with newfound ease and security.
+                     </p>
+                 </div>
+                 <div class="flex justify-center">
+                      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop" alt="A diverse group of people collaborating with a sense of purpose" class="rounded-4xl shadow-2xl">
+                 </div>
+             </div>
+         </section>
+
+         <section class="text-center py-16 md:py-24">
+             <h2 class="text-6xl font-bold text-slate-800">Ready to Start Your Journey?</h2>
+             <p class="mt-4 text-xl text-slate-600 max-w-4xl mx-auto">Your free one-hour session is waiting. It's not just a trial, it's our commitment to you. Let's begin.</p>
+             <a href="enroll.html" class="mt-10 inline-block bg-primary text-white font-bold py-5 px-14 rounded-full hover:opacity-90 transition duration-300 text-xl button-glow">Book A Session Now</a>
+         </section>
+
+         <footer class="text-center py-8 mt-16 border-t border-slate-200">
+             <p class="text-slate-600">&copy; 2025 Fusis Technical Institute. All Rights Reserved.</p>
+             <p class="text-slate-500 mt-2">fti.contact@gmail.com | (206) 806-3229</p>
+         </footer>
+     </div>
+     <script src="js/script.js"></script>
+ </body>
+ </html>

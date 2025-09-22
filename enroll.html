@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Book a Session - FTI</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/style.css">
+     <script>
+         tailwind.config = {
+             theme: {
+                 extend: {
+                    borderRadius: {
+                        '4xl': '2rem',
+                    },
+                     fontFamily: { sans: ['Inter', 'sans-serif'], },
+                     colors: { 'primary': '#0052d4', 'slate-800': '#1e293b', 'slate-600': '#475569', 'slate-100': '#f1f5f9', }
+                 }
+             }
+         }
+     </script>
+ </head>
+ <body class="bg-slate-100 font-sans antialiased pt-24">
+
+    <!-- SVG Filter for Liquid Glass Effect -->
+    <svg style="display:none;">
+        <filter id="displacementFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="1" result="warp" />
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="20" in="SourceGraphic" in2="warp" />
+        </filter>
+    </svg>
+
+     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 p-4">
+        <div class="container mx-auto flex justify-between items-center p-3 rounded-3xl liquid-glass">
+            <a href="index.html" class="text-3xl font-bold text-primary pl-4">FTI</a>
+            <nav class="hidden md:flex items-center space-x-2">
+                <a href="index.html" class="nav-link text-slate-600 font-medium">Home</a>
+                <a href="enroll.html" class="nav-link text-slate-600 font-medium">Book a Session</a>
+                <a href="about.html" class="nav-link text-slate-600 font-medium">About Us</a>
+            </nav>
+            <a href="enroll.html" class="hidden md:inline-block bg-primary text-white font-semibold py-3 px-6 rounded-full hover:opacity-90 transition duration-300 button-glow mr-2">Get Started</a>
+        </div>
+     </header>
+
+     <div class="container mx-auto p-6">
+         <section class="py-16 md:py-24">
+             <div class="max-w-3xl mx-auto bg-white p-10 rounded-4xl shadow-soft">
+                 <h2 class="text-4xl font-bold text-center text-slate-800">Let's Get Started</h2>
+                 <p class="text-center text-lg text-slate-600 mt-2">Take the first step by filling out the form below. We'll be in touch to schedule your free session.</p>
+
+                 <form id="enrollment-form" class="mt-10 space-y-6">
+                     <div>
+                         <label for="name" class="block text-sm font-semibold text-slate-700">Full Name</label>
+                         <input type="text" id="name" name="name" required class="mt-2 block w-full px-4 py-3 bg-white border border-slate-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                     </div>
+                     <div>
+                         <label for="email" class="block text-sm font-semibold text-slate-700">Email Address</label>
+                         <input type="email" id="email" name="email" required class="mt-2 block w-full px-4 py-3 bg-white border border-slate-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                     </div>
+                     <div>
+                         <label for="phone" class="block text-sm font-semibold text-slate-700">Phone Number</label>
+                         <input type="tel" id="phone" name="phone" required class="mt-2 block w-full px-4 py-3 bg-white border border-slate-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                     </div>
+                     <div>
+                         <label for="comments" class="block text-sm font-semibold text-slate-700">What's your main technology goal?</label>
+                         <textarea id="comments" name="comments" rows="4" class="mt-2 block w-full px-4 py-3 bg-white border border-slate-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="e.g., 'I want to learn how to use Zoom' or 'Help me set up my new iPad.'"></textarea>
+                     </div>
+                     <div>
+                         <button type="submit" class="w-full flex justify-center py-4 px-4 border border-transparent rounded-full text-lg font-bold text-white bg-primary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary button-glow">Book My Session</button>
+                     </div>
+                 </form>
+                 <div id="form-status" class="mt-6 text-center font-semibold"></div>
+             </div>
+         </section>
+
+         <section id="consultation" class="py-16 md:py-24">
+              <h2 class="text-4xl font-bold text-center text-slate-800">Pick a Date</h2>
+              <p class="text-center text-lg text-slate-600 mt-2">If you prefer, pick a time from the calendar below that works for you.</p>
+              <div class="mt-12 rounded-4xl shadow-soft overflow-hidden">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/contemporarytechnicalinstitute/30min" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <!-- Calendly inline widget end -->
+              </div>
+         </section>
+
+         <footer class="text-center py-8 mt-16 border-t border-slate-200">
+             <p class="text-slate-600">&copy; 2025 Fusis Technical Institute. All Rights Reserved.</p>
+             <p class="text-slate-500 mt-2">fti.contact@gmail.com | (206) 806-3229</p>
+         </footer>
+     </div>
+     <script src="js/script.js"></script>
+ </body>
+ </html>
